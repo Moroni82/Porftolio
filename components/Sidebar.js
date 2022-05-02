@@ -6,9 +6,9 @@ const Sidebar = () => {
   return (
     <div className={styles.sidebar}>
       <div className={styles.socialmedia}>
-      <i class="fa-brands fa-linkedin-in"></i>
-      <i class="fa-brands fa-github"></i>
-      <i class="fa-brands fa-instagram"></i>
+      <i className="fa-brands fa-linkedin-in"></i>
+      <i className="fa-brands fa-github"></i>
+      <i className="fa-brands fa-instagram"></i>
       </div>  
     </div>
   )
