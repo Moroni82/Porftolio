@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Jost";
+  src: url("./Jost-Light.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Jost";
+  src: url("./Jost-SemiBold.ttf");
+  font-weight: 600;
+}
