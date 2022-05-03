@@ -1,6 +1,5 @@
 /* ------------------------Index CSS---------------------------- */
 
-
 .container {
   display: flex;
 }
@@ -135,11 +134,12 @@
   padding: 14px;
 }
 
-.check, .menuIcon {
+.check,
+.menuIcon {
   display: none;
 }
 
-@media (max-width:900px){
+@media (max-width: 900px) {
   .navbar {
     width: 100%;
   }
@@ -163,16 +163,16 @@
     height: 100%;
     max-height: calc(100vh - 70px);
     overflow: auto;
-    background-color: #b6afae
+    background-color: #b6afae;
   }
   .navContainer ul li {
     display: flex;
     justify-content: center;
     margin: 0;
   }
-  
+
   .navContainer ul li a {
-    padding:2rem;
+    padding: 2rem;
     margin: 0;
     width: 100%;
     text-align: center;
@@ -188,10 +188,9 @@
     transition: all 0.4s;
   }
 
-  .sidebar{
+  .sidebar {
     display: none;
   }
-  
 }
 
 /* ------------------------Footer CSS---------------------------- */
@@ -200,15 +199,14 @@
   height: 200px;
   width: 100%;
   display: flex;
-  padding:20px;
+  padding: 20px;
   justify-content: space-between;
   align-content: center;
   align-items: center;
   flex-direction: row;
 }
-@media (max-width:500px) {
-
-  .FooterContainer{
+@media (max-width: 500px) {
+  .FooterContainer {
     display: flex;
     flex-direction: column;
     height: max-content;
@@ -219,13 +217,13 @@
     height: max-content;
   }
 
-  .footerContact{
+  .footerContact {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
   }
 
-  .footerConnect{
+  .footerConnect {
     margin-bottom: 20px;
   }
 }
@@ -245,7 +243,6 @@
 .FooterContainer a {
   font-weight: 300;
 }
-
 
 .footerContact {
   display: flex;
