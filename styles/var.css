@@ -1,7 +1,7 @@
 :root {
   /* -----------Fonts------------------ */
-  --font-name: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;
-  --font-text: 'PT Sans', sans-serif;
+  --font-name: "Jost", sans-serif;
+  --font-text: "Jost", sans-serif;
   /* -----------FontSize------------------ */
   --small-font-size: 0.75em;
   --base-font-size: 1em;
@@ -9,8 +9,10 @@
   --medium-font-size: 1.777em;
   --large-font-size: 2.369em;
   /* -----------Colors------------------ */
-  --backgroud-sidebar: #cec4c2ac;
-  --background-gradient:no-repeat linear-gradient(150deg, #b0a9a7, #9c9291, #625b59);
+  --background-sidebar: #b6afae;
+  --background-gradient: no-repeat
+    linear-gradient(150deg, #b0a9a7, #9c9291, #625b59);
+  --heading-color: #000000;
   /* -----------lineHeight------------------ */
   --base-line-height: 1.5;
   --mid-line-height: 1.3;

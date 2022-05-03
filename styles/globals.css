@@ -1,20 +1,38 @@
-html{
-  height: 100vh;
+*,
+*::after,
+*::before {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-
 
 body {
-  box-sizing: border-box;
-  padding:0;
-  margin:0;
-  width: 100vw;
-  /* background: #d7d2d6; */
-  background: var(--background-gradient);
-  font-family: var(--font-text);
+  width: 100%;
+  min-height: 100vh;
+  background: #bab7b7fb;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-name);
+  font-weight: 600;
+}
 
+p {
+  font-family: var(--font-name);
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
 
+a {
+  font-family: var(--font-name);
+  font-weight: 500;
+}
 
-
+ul,
+ol {
+  list-style: none;
+}

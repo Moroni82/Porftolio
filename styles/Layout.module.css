@@ -1,0 +1,14 @@
+.static {
+  display: flex;
+  flex-direction: column;
+  padding-left: 44px;
+  padding-top: 78px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (max-width:900px) {
+  .static {
+    padding-left:0;
+  }
+}

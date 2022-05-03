@@ -1,21 +1,44 @@
+/* ------------------------Index CSS---------------------------- */
 
+
+.container {
+  display: flex;
+}
+
+.frontContainer {
+  display: flex;
+  padding: 30px;
+}
+
+.intro h1 {
+  width: 50%;
+}
+
+.invi {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+/* ------------------------Sidebar CSS---------------------------- */
 
 .sidebar {
   display: flex;
   position: fixed;
-  padding:15px;
+  padding: 15px;
   justify-content: center;
   align-items: center;
   align-content: center;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   width: 45px;
   height: 100vh;
-  background-color: var(--backgroud-sidebar);
-  border-right:1px solid #f3f4e10d;
+  background-color: var(--background-sidebar);
+  border-right: 1px solid #f3f4e10d;
 }
 
-.sidebar .socialmedia{
+.sidebar .socialmedia {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,38 +46,36 @@
   align-content: center;
 }
 
-.sidebar .socialmedia i{
+.sidebar .socialmedia i {
   padding: 25px 0px;
   color: rgba(30, 29, 29, 0.642);
   transition: 0.3s;
 }
 
-.sidebar .socialmedia i:hover{
+.sidebar .socialmedia i:hover {
   scale: 1.1;
   color: rgb(30, 29, 29);
   border-radius: 100%;
 }
 
-.myname {
-  margin-top: 20px;
-  margin-left: 50px;
-}
-.myname a{
-  font-family: var(--font-name);
+/* ------------------------NavBar CSS---------------------------- */
+
+.myname a {
   font-size: 1rem;
-  line-height: var(--header-line-height);
   letter-spacing: 1px;
-  margin: 20px;
+  padding: 20px;
 }
 
-.navbar{  
+.navbar {
   box-sizing: border-box;
   display: flex;
-  width: 100%;
-  height: 50px;
-  padding: 0 2rem;
+  position: fixed;
+  width: calc(100% - 45px);
   align-items: center;
   justify-content: space-between;
+  top: 0;
+  right: 0;
+  padding: 5px 20px;
 }
 
 .myname {
@@ -65,32 +86,30 @@
   align-items: center;
 }
 
-.navigation{
+.navigation {
   display: flex;
   text-align: center;
   justify-content: center;
   align-content: center;
   align-items: center;
   flex-direction: row;
-
-  margin-top: 20px;
 }
 
-.navigation a{
+.navigation a {
   margin: 20px;
   cursor: pointer;
   box-sizing: border-box;
   position: relative;
-  color:rgba(30, 29, 29, 0.722);
+  color: rgba(30, 29, 29, 0.722);
   padding: 0 5px;
   letter-spacing: 0.5px;
 }
 
-.navigation a:after{
-  content:"";
+.navigation a:after {
+  content: "";
   transition: 0.4s;
   position: absolute;
-  background-color: rgba(30, 29, 29, 0.642);;
+  background-color: rgba(30, 29, 29, 0.642);
   height: 1.5px;
   width: 0;
   left: 0;
@@ -98,14 +117,158 @@
 }
 
 .navigation a:focus {
-  color:rgb(30, 29, 29);
+  color: rgb(30, 29, 29);
 }
 
-.navigation a:hover{
-  color:rgb(30, 29, 29);
- }
+.navigation a:hover {
+  color: rgb(30, 29, 29);
+}
 
-.navigation a:hover:after{
- color:rgb(30, 29, 29);
- width: 100%;
+.navigation a:hover:after {
+  color: rgb(30, 29, 29);
+  width: 100%;
+}
+
+.menuIcon {
+  width: 48px;
+  height: 48px;
+  padding: 14px;
+}
+
+.check, .menuIcon {
+  display: none;
+}
+
+@media (max-width:900px){
+  .navbar {
+    width: 100%;
+  }
+  .checkBtn {
+    display: block;
+  }
+  .menuIcon {
+    display: block;
+    position: fixed;
+    top: 12px;
+    right: 20px;
+    cursor: pointer;
+  }
+  .navContainer ul {
+    display: block;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    left: -100%;
+    height: 100%;
+    max-height: calc(100vh - 70px);
+    overflow: auto;
+    background-color: #b6afae
+  }
+  .navContainer ul li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+  
+  .navContainer ul li a {
+    padding:2rem;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navigation a:hover:after {
+    color: rgb(30, 29, 29);
+    width: 0%;
+  }
+
+  .check:checked ~ ul {
+    left: 0;
+    transition: all 0.4s;
+  }
+
+  .sidebar{
+    display: none;
+  }
+  
+}
+
+/* ------------------------Footer CSS---------------------------- */
+
+.FooterBox {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  padding:20px;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+@media (max-width:500px) {
+
+  .FooterContainer{
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+  }
+  .FooterBox {
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+  }
+
+  .footerContact{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footerConnect{
+    margin-bottom: 20px;
+  }
+}
+
+.footerDivisor {
+  height: 2px;
+  width: 95%;
+  background: var(--background-sidebar);
+}
+
+.FooterContainer {
+  padding-top: 50px;
+  padding-left: 40px;
+  width: 100%;
+}
+
+.FooterContainer a {
+  font-weight: 300;
+}
+
+
+.footerContact {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.footerConnect {
+  width: 50%;
+}
+
+.footerPages {
+  width: 50%;
+}
+
+.futdiv {
+  height: 1px;
+  background-color: var(--background-sidebar);
+  width: 80%;
+  margin: 10px 0px;
+}
+
+.footerContact h4 {
+}
+.footerCopy h4 {
 }
