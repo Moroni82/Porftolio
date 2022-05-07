@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const getIsDesktop = () =>
   globalThis.window !== undefined &&
@@ -6,35 +6,53 @@ const getIsDesktop = () =>
 
 const useMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(getIsDesktop());
+  const [isDesktop, setIsDesktop] = useState(false);
 
   const toggle = () => {
     setIsOpen((prev) => !prev);
   };
 
+  const keyDownHandler = (e) => {
+    if (e.code === "Escape") {
+      setIsOpen(false);
+      e.preventDefault();
+    }
+  };
+
   useEffect(() => {
     document.body.style.overflow = isOpen && !isDesktop ? "hidden" : "auto";
+
+    if (isOpen && !isDesktop) {
+      document.addEventListener("keydown", keyDownHandler);
+    } else {
+      document.removeEventListener("keydown", keyDownHandler);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", keyDownHandler);
+    };
   }, [isOpen, isDesktop]);
 
   useEffect(() => {
-    const cb = () => {
+    setIsDesktop(getIsDesktop());
+
+    const resizeHandler = () => {
       const isDesktopNow = getIsDesktop();
 
-      if (isDesktopNow !== isDesktop) {
-        setIsDesktop(isDesktopNow);
-      }
+      setIsDesktop(isDesktopNow);
     };
 
-    window.addEventListener("resize", cb);
+    window.addEventListener("resize", resizeHandler);
 
     return () => {
-      window.removeEventListener("resize", cb);
+      window.removeEventListener("resize", resizeHandler);
     };
-  }, [isDesktop]);
+  }, []);
 
   return {
     isOpen,
     toggle,
+    isDesktop,
   };
 };
 
